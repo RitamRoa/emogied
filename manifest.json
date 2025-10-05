@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Emogied",
+  "version": "1.0",
+  "description": "Replaces broken images with relevant emojis.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["imageFallback.js"],
+      "css": ["style.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["style.css"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
